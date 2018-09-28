@@ -199,7 +199,7 @@ I'll be adding support for [Matching](https://0xproject.com/wiki#Matching) as so
 ### Howto
 
 1/ Search the orderbook for a specific WETH pair:
-* A https://conduit-relay.herokuapp.com/api/v0/orderbook?baseTokenAddress=0xd0a1e359811322d97991e03f863a0c30c2cf029c&page=1&per_page=100&quoteTokenAddress=0x6ff6c0ff1d68b964901f986d4c9fa3ac68346570 query
+* A GET https://conduit-relay.herokuapp.com/api/v0/orderbook?baseTokenAddress=0xd0a1e359811322d97991e03f863a0c30c2cf029c&page=1&per_page=100&quoteTokenAddress=0x6ff6c0ff1d68b964901f986d4c9fa3ac68346570 request
 returns:
 ```
 bids	
@@ -246,7 +246,10 @@ r	"0x0f729c231a156f0f7a9852bc74cf2e476eb994401ddb9df8818a125eabd45e9b"
 s	"0x0ece49da2b2bb2e9dc36560141132b991cd8bd51cde3728dd91ba929a7ebf6a8"
 ```
 
-2/ Query the orders list:
-https://conduit-relay.herokuapp.com/api/v0/orders returns all the orders from all tokens listed
+2/ GET request to retrieve the orders list:
+* https://conduit-relay.herokuapp.com/api/v0/orders returns all the orders from all tokens listed
+
+3/ GET request to retrieve the token_pairs
+* https://conduit-relay.herokuapp.com/api/v0/token_pairs
 
 
