@@ -198,8 +198,8 @@ I'll be adding support for [Matching](https://0xproject.com/wiki#Matching) as so
 
 ### Howto
 
-1/ Search the orderbook for a specific WETH pair
-An https://conduit-relay.herokuapp.com/api/v0/orderbook?baseTokenAddress=0xd0a1e359811322d97991e03f863a0c30c2cf029c&page=1&per_page=100&quoteTokenAddress=0x6ff6c0ff1d68b964901f986d4c9fa3ac68346570 query
+1/ Search the orderbook for a specific WETH pair:
+* A https://conduit-relay.herokuapp.com/api/v0/orderbook?baseTokenAddress=0xd0a1e359811322d97991e03f863a0c30c2cf029c&page=1&per_page=100&quoteTokenAddress=0x6ff6c0ff1d68b964901f986d4c9fa3ac68346570 query
 returns:
 ```
 bids	
