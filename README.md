@@ -15,9 +15,7 @@ Follows ZeroEx [Standard Relayer API V0 Draft](https://github.com/0xProject/stan
 
 
 - Tested on ubuntu 16.04 LTS
-- Install Nodejs: v10.11.0
-git clone https://github.com/nionix/npm
-
+- Install/upgrade to Nodejs: v10.11.0
 - Install yarn:
 ```curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list```
@@ -66,6 +64,9 @@ sudo docker-compose
     sudo cp /tmp/docker-machine /usr/local/bin/docker-machine```
 - verify install: ```docker-machine -v```
 
+- current status:
+
+```
 yarn start
 yarn run v1.9.4
 $ node dist/index
@@ -89,8 +90,7 @@ $ ts-node src/index
 2018-09-25T22:00:47.835Z - verbose: Redis Subscriber setup
 2018-09-25T22:00:47.835Z - debug: Connected to Redis instance
 2018-09-25T22:00:47.915Z - error: Error connecting to Postgres error: password authentication failed for user "johnjohnson"
-
-
+```
 
 ### Local dev setup
 
