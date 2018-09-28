@@ -13,18 +13,28 @@ Follows ZeroEx [Standard Relayer API V0 Draft](https://github.com/0xProject/stan
 
 ## Getting started
 
-
 - Tested on ubuntu 16.04 LTS
 - Install/upgrade to Nodejs: v10.11.0
 - Install yarn:
-```curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list```
-```sudo apt-get update && sudo apt-get install yarn```
+
+```
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+```
+
+```
+sudo apt-get update && sudo apt-get install yarn
+```
 
 - Install redis-server:
-```sudo apt-get install redis-server```
+
+```
+sudo apt-get install redis-server
+```
 - then run command to confirm that everything ok:
-```sudo service redis-server status```
+```
+sudo service redis-server status
+```
 
 - Install docker-compose:
 sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
@@ -32,37 +42,51 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 - Test connection to db port and other:
-netstat -p tcp | grep $PORT
-lsof -nP -iTCP:$PORT | grep LISTEN
-lsof -nP -i:$PORT | grep LISTEN
+* netstat -p tcp | grep $PORT
+* lsof -nP -iTCP:$PORT | grep LISTEN
+* lsof -nP -i:$PORT | grep LISTEN
 
 
 - Install docker:
-```curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -```
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
 
 - Add the Docker repository to APT sources:
 
-```sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"```
+```
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+```
 - Next, update the package database with the Docker packages from the newly added repo:
 
-```sudo apt-get update```
+```
+sudo apt-get update
+```
 
-```apt-cache policy docker-ce```
+```
+apt-cache policy docker-ce
+```
 
 - Finally, install Docker:
-```sudo apt-get install -y docker-ce```
+```
+sudo apt-get install -y docker-ce
+```
 
 - Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it's running:
 
-```sudo systemctl status docker```
+```
+sudo systemctl status docker
+```
 
 sudo docker-compose
 
 - Install docker-machine
-```curl -L https://github.com/docker/machine/releases/download/v0.15.0/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
+```
+curl -L https://github.com/docker/machine/releases/download/v0.15.0/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
     chmod +x /tmp/docker-machine &&
     sudo cp /tmp/docker-machine /usr/local/bin/docker-machine```
-- verify install: ```docker-machine -v```
+- verify install: ```docker-machine -v
+```
 
 - current status:
 
@@ -100,12 +124,12 @@ To start the local dev server:
 yarn install
 yarn start
 ```
-The server is hosted at `http://localhost:3000`
+* The server is hosted at `http://localhost:3000`
 
-To make sure it is working, make a GET request to `http://localhost:3000/api/v0/token_pairs` 
+* To make sure it is working, make a GET request to `http://localhost:3000/api/v0/token_pairs` 
 
 ### Configure
-change feerecipient (kovan): 0x13cF20B0a6053bA53855e5574AD049323109B0C4
+* change feerecipient (kovan): 0x13cF20B0a6053bA53855e5574AD049323109B0C4
 
 ### Architecture
                                                                     
