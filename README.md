@@ -151,11 +151,13 @@ yarn start
                                                                     
 	                                                                     
 	                                                                     
-	                              ┌──────────────┐                       
-	                              │              │                       
-	                              │    Client    │                       
-	                              │              │                       
-	                              └──────────────┘                       
+	                       ┌─────────────────────────────┐                       
+	                       │amis-erc20.github.io/smartdex│
+			       │            Amis             │
+	                       │   	  SmartDex	     │
+			       │    	   Client    	     │                       
+	                       │              		     │                       
+	                       └─────────────────────────────┘                       
 	                                    ▲  ▲                             
 	                            ┌───────┘  └───────┐                     
 	                            │                  ▼                     
@@ -193,3 +195,58 @@ yarn start
 ### Roadmap
 
 I'll be adding support for [Matching](https://0xproject.com/wiki#Matching) as soon as [this proposal](https://github.com/0xProject/ZEIPs/issues/2) is implemented. I personally think the matching strategy will lead to a better UX (atomic, no race conditions, faster relay feedback), but currently requires large upfront capital. Matching engine will use sorted sets on top of red-black trees and will be configured as a separate strategy.
+
+### Howto
+
+1/ Search the orderbook for a specific WETH pair
+An https://conduit-relay.herokuapp.com/api/v0/orderbook?baseTokenAddress=0xd0a1e359811322d97991e03f863a0c30c2cf029c&page=1&per_page=100&quoteTokenAddress=0x6ff6c0ff1d68b964901f986d4c9fa3ac68346570 query
+returns:
+```
+bids	
+0	
+exchangeContractAddress	"0x90fe2af704b34e0224bf2299c838e04d4dcf1364"
+maker	"0xceebbcf600e3643be7fbd639b64ad609ff2abf71"
+taker	"0x0000000000000000000000000000000000000000"
+makerTokenAddress	"0xd0a1e359811322d97991e03f863a0c30c2cf029c"
+takerTokenAddress	"0x6ff6c0ff1d68b964901f986d4c9fa3ac68346570"
+feeRecipient	"0x0000000000000000000000000000000000000000"
+makerTokenAmount	"2900000000000000"
+takerTokenAmount	"1000000000000000000"
+makerFee	"0"
+takerFee	"0"
+expirationUnixTimestampSec	"1537912800"
+salt	"19963472023720220868290022542873803929730847471346145544791072525302447061067"
+ecSignature	
+v	28
+r	"0xc1a04e5c3a15a8db8dd2514b6b2d54325d53c212079a20aece3dcaa71817b16b"
+s	"0x513f08faa7ad101875ac2825b532b106bfa883b2c8314c17d86fcce70d25415e"
+1	{…}
+2	{…}
+3	{…}
+4	{…}
+5	{…}
+6	{…}
+asks	
+0	
+exchangeContractAddress	"0x90fe2af704b34e0224bf2299c838e04d4dcf1364"
+maker	"0xceebbcf600e3643be7fbd639b64ad609ff2abf71"
+taker	"0x0000000000000000000000000000000000000000"
+makerTokenAddress	"0x6ff6c0ff1d68b964901f986d4c9fa3ac68346570"
+takerTokenAddress	"0xd0a1e359811322d97991e03f863a0c30c2cf029c"
+feeRecipient	"0x0000000000000000000000000000000000000000"
+makerTokenAmount	"1000000000000000"
+takerTokenAmount	"100000000000000"
+makerFee	"0"
+takerFee	"0"
+expirationUnixTimestampSec	"1538172000"
+salt	"1882906118882121786560959423584494093735683627214136122858370408972300359305"
+ecSignature	
+v	28
+r	"0x0f729c231a156f0f7a9852bc74cf2e476eb994401ddb9df8818a125eabd45e9b"
+s	"0x0ece49da2b2bb2e9dc36560141132b991cd8bd51cde3728dd91ba929a7ebf6a8"
+```
+
+2/ Query the orders list:
+https://conduit-relay.herokuapp.com/api/v0/orders returns all the orders from all tokens listed
+
+
