@@ -35,7 +35,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: orders; Type: TABLE; Schema: public; Owner: johnjohnson
+-- Name: orders; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE orders (
@@ -59,10 +59,10 @@ CREATE TABLE orders (
 );
 
 
-ALTER TABLE orders OWNER TO johnjohnson;
+ALTER TABLE orders OWNER TO postgres;
 
 --
--- Name: token_pairs; Type: TABLE; Schema: public; Owner: johnjohnson
+-- Name: token_pairs; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE token_pairs (
@@ -72,10 +72,10 @@ CREATE TABLE token_pairs (
 );
 
 
-ALTER TABLE token_pairs OWNER TO johnjohnson;
+ALTER TABLE token_pairs OWNER TO postgres;
 
 --
--- Name: token_pairs_id_seq; Type: SEQUENCE; Schema: public; Owner: johnjohnson
+-- Name: token_pairs_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE token_pairs_id_seq
@@ -87,17 +87,17 @@ CREATE SEQUENCE token_pairs_id_seq
     CACHE 1;
 
 
-ALTER TABLE token_pairs_id_seq OWNER TO johnjohnson;
+ALTER TABLE token_pairs_id_seq OWNER TO postgres;
 
 --
--- Name: token_pairs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: johnjohnson
+-- Name: token_pairs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE token_pairs_id_seq OWNED BY token_pairs.id;
 
 
 --
--- Name: tokens; Type: TABLE; Schema: public; Owner: johnjohnson
+-- Name: tokens; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE tokens (
@@ -110,17 +110,17 @@ CREATE TABLE tokens (
 );
 
 
-ALTER TABLE tokens OWNER TO johnjohnson;
+ALTER TABLE tokens OWNER TO postgres;
 
 --
--- Name: token_pairs id; Type: DEFAULT; Schema: public; Owner: johnjohnson
+-- Name: token_pairs id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY token_pairs ALTER COLUMN id SET DEFAULT nextval('token_pairs_id_seq'::regclass);
 
 
 --
--- Name: token_pairs base_token_quote_token_combination_unique; Type: CONSTRAINT; Schema: public; Owner: johnjohnson
+-- Name: token_pairs base_token_quote_token_combination_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY token_pairs
@@ -128,7 +128,7 @@ ALTER TABLE ONLY token_pairs
 
 
 --
--- Name: orders orders_pkey; Type: CONSTRAINT; Schema: public; Owner: johnjohnson
+-- Name: orders orders_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY orders
@@ -136,7 +136,7 @@ ALTER TABLE ONLY orders
 
 
 --
--- Name: token_pairs token_pairs_pkey; Type: CONSTRAINT; Schema: public; Owner: johnjohnson
+-- Name: token_pairs token_pairs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY token_pairs
@@ -144,7 +144,7 @@ ALTER TABLE ONLY token_pairs
 
 
 --
--- Name: tokens tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: johnjohnson
+-- Name: tokens tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY tokens
